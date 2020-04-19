@@ -1,20 +1,20 @@
 # Screen Resolution 1400 x 900
 # DATA TYPES
 # Set Dynamiclly
-x01 = "Hello World"  # str
-x02 = 20  # int
-x03 = 20.5  # float
-x04 = 1j  # complex
-x05 = ["apple", "banana", "cherry"]  # list
-x06 = ("apple", "banana", "cherry")  # tuple
-x07 = range(6)  # range
-x08 = {"name": "John", "age": 36}  # dict
-x09 = {"apple", "banana", "cherry"}  # set
+x01 = "Hello World"                             # str
+x02 = 20                                        # int
+x03 = 20.5                                      # float
+x04 = 1j                                        # complex
+x05 = ["apple", "banana", "cherry"]             # list
+x06 = ("apple", "banana", "cherry")             # tuple
+x07 = range(6)                                  # range
+x08 = {"name": "John", "age": 36}               # dict
+x09 = {"apple", "banana", "cherry"}             # set
 x10 = frozenset({"apple", "banana", "cherry"})  # frozenset
-x11 = True  # bool
-x12 = b"Hello"  # bytes
-x13 = bytearray(5)  # bytearray
-x14 = memoryview(bytes(5))  # memoryview
+x11 = True                                      # bool
+x12 = b"Hello"                                  # bytes
+x13 = bytearray(5)                              # bytearray
+x14 = memoryview(bytes(5))                      # memoryview
 
 # print(type(x12))
 
@@ -101,50 +101,50 @@ a10 = a07, a08
 # print("\110\145\154\154\157")
 # print("\x48\x65\x6c\x6c\x6f")
 
-#   capitalize()	Converts the first character to upper case
-#   casefold()	Converts string into lower case
-#   center()	Returns a centered string
-#   count()	Returns the number of times a specified value occurs in a string
-#   encode()	Returns an encoded version of the string
-#   endswith()	Returns true if the string ends with the specified value
-#   expandtabs()	Sets the tab size of the string
-#   find()	Searches the string for a specified value and returns the position of where it was found
-#   format()	Formats specified values in a string
-#   format_map()	Formats specified values in a string
-#   index()	Searches the string for a specified value and returns the position of where it was found
-#   isalnum()	Returns True if all characters in the string are alphanumeric
-#   isalpha()	Returns True if all characters in the string are in the alphabet
-#   isdecimal()	Returns True if all characters in the string are decimals
-#   isdigit()	Returns True if all characters in the string are digits
-#   isidentifier()	Returns True if the string is an identifier
-#   islower()	Returns True if all characters in the string are lower case
-#   isnumeric()	Returns True if all characters in the string are numeric
-#   isprintable()	Returns True if all characters in the string are printable
-#   isspace()	Returns True if all characters in the string are whitespaces
-#   istitle()	Returns True if the string follows the rules of a title
-#   isupper()	Returns True if all characters in the string are upper case
-#   join()	Joins the elements of an iterable to the end of the string
-#   ljust()	Returns a left justified version of the string
-#   lower()	Converts a string into lower case
-#   lstrip()	Returns a left trim version of the string
-#   maketrans()	Returns a translation table to be used in translations
-#   partition()	Returns a tuple where the string is parted into three parts
-#   replace()	Returns a string where a specified value is replaced with a specified value
-#   rfind()	Searches the string for a specified value and returns the last position of where it was found
-#   rindex()	Searches the string for a specified value and returns the last position of where it was found
-#   rjust()	Returns a right justified version of the string
-#   rpartition()	Returns a tuple where the string is parted into three parts
-#   rsplit()	Splits the string at the specified separator, and returns a list
-#   rstrip()	Returns a right trim version of the string
-#   split()	Splits the string at the specified separator, and returns a list
-#   splitlines()	Splits the string at line breaks and returns a list
-#   startswith()	Returns true if the string starts with the specified value
-#   strip()	Returns a trimmed version of the string
-#   swapcase()	Swaps cases, lower case becomes upper case and vice versa
-#   title()	Converts the first character of each word to upper case
-#   translate()	Returns a translated string
-#   upper()	Converts a string into upper case
-#   zfill()	Fills the string with a specified number of 0 values at the beginning
+#   capitalize()	    Converts the first character to upper case
+#   casefold()	        Converts string into lower case
+#   center()	        Returns a centered string
+#   count()	            Returns the number of times a specified value occurs in a string
+#   encode()	        Returns an encoded version of the string
+#   endswith()	        Returns true if the string ends with the specified value
+#   expandtabs()	    Sets the tab size of the string
+#   find()	            Searches the string for a specified value and returns the position of where it was found
+#   format()	        Formats specified values in a string
+#   format_map()	    Formats specified values in a string
+#   index()	            Searches the string for a specified value and returns the position of where it was found
+#   isalnum()	        Returns True if all characters in the string are alphanumeric
+#   isalpha()	        Returns True if all characters in the string are in the alphabet
+#   isdecimal()	        Returns True if all characters in the string are decimals
+#   isdigit()	        Returns True if all characters in the string are digits
+#   isidentifier()	    Returns True if the string is an identifier
+#   islower()	        Returns True if all characters in the string are lower case
+#   isnumeric()	        Returns True if all characters in the string are numeric
+#   isprintable()	    Returns True if all characters in the string are printable
+#   isspace()	        Returns True if all characters in the string are whitespaces
+#   istitle()	        Returns True if the string follows the rules of a title
+#   isupper()	        Returns True if all characters in the string are upper case
+#   join()	            Joins the elements of an iterable to the end of the string
+#   ljust()	            Returns a left justified version of the string
+#   lower()	            Converts a string into lower case
+#   lstrip()	        Returns a left trim version of the string
+#   maketrans()	        Returns a translation table to be used in translations
+#   partition()	        Returns a tuple where the string is parted into three parts
+#   replace()	        Returns a string where a specified value is replaced with a specified value
+#   rfind()	            Searches the string for a specified value and returns the last position of where it was found
+#   rindex()	        Searches the string for a specified value and returns the last position of where it was found
+#   rjust()	            Returns a right justified version of the string
+#   rpartition()	    Returns a tuple where the string is parted into three parts
+#   rsplit()	        Splits the string at the specified separator, and returns a list
+#   rstrip()	        Returns a right trim version of the string
+#   split()	            Splits the string at the specified separator, and returns a list
+#   splitlines()	    Splits the string at line breaks and returns a list
+#   startswith()	    Returns true if the string starts with the specified value
+#   strip()	            Returns a trimmed version of the string
+#   swapcase()	        Swaps cases, lower case becomes upper case and vice versa
+#   title()	            Converts the first character of each word to upper case
+#   translate()	        Returns a translated string
+#   upper()	            Converts a string into upper case
+#   zfill()	            Fills the string with a specified number of 0 values at the beginning
 
 
 # ____________________________________________________________________
@@ -212,7 +212,7 @@ a10 = a07, a08
 # but if they are actually the same object, with the same memory location:
 
 #    Operator	Description	                                                Example
-#    is 	        Returns True if both variables are the same object	    x is y
+#    is 	    Returns True if both variables are the same object	        x is y
 #    is not	    Returns True if both variables are not the same object	    x is not y
 
 
@@ -231,9 +231,9 @@ a10 = a07, a08
 #    ^	        XOR	                    Sets each bit to 1 if only one of two bits is 1
 #    ~ 	        NOT	                    Inverts all the bits
 #    <<	        Zero fill left shift	Shift left by pushing zeros in from the right and let
-# the leftmost bits fall off
+#                                       the leftmost bits fall off
 #    >>	        Signed right shift	    Shift right by pushing copies of the leftmost bit in from
-# the left, and let the rightmost bits fall off
+#                                       the left, and let the rightmost bits fall off
 
 
 # Lists_________________________________________________________________

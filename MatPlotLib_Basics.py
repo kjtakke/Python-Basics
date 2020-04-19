@@ -226,9 +226,9 @@ explode = []
 for i in x:
     explode.append(0.1)
 #print(explode)
-
+#plt.figure(1, figsize=(12,8))
 #Colours
-#color_set = ('#478F4B', '#8F6A47', '#47758F', '#8F8C47', '#8F474F', '#48478F', '#8F476D', '#82478F')
+color_set = ('#478F4B', '#8F6A47', '#47758F', '#8F8C47', '#8F474F', '#48478F', '#8F476D', '#82478F')
 
 #Create Chart
 #plt.pie(y, labels=x, explode=explode, shadow=True, startangle=90, autopct='%1.1f%%', colors=color_set)
@@ -266,3 +266,4 @@ for i in x:
 #bg_color = plt.gca()
 #bg_color.set_facecolor('#999999')
 #plt.show()
+print(df)

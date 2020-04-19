@@ -1,4 +1,3 @@
-# https://www.stats.govt.nz/assets/Uploads/National-population-estimates/National-population-estimates-At-30-June-2018/Download-data/national-population-estimates-at-30-june-2018-components-of-population-change-csv.csv
 import pandas as pd
 from pandas import DataFrame
 import numpy as np
@@ -30,14 +29,15 @@ cars = pd.DataFrame(cars, columns=cars_columns, index=range(1, cars_row_count))
 
 
 
+
+
+
 #From CSV____________________________________________________________
 path = r"http://bit.ly/2cLzoxH"
 
 df = pd.read_csv(path)
 #print(df.head())
 #print(df.describe())
-
-
 
 #print(df.isnull())
 
@@ -50,6 +50,11 @@ df = pd.read_csv(path)
 #print((df[['lifeExp']].max()))
 #print((df[['lifeExp']].sum()))
 #print((df[['lifeExp']].std()))
+
+
+
+
+
 
 #Filtering
 #print(df[df['year'] > 2000])
@@ -64,6 +69,11 @@ df3 = df[df['lifeExp'] < 50]
 
 df4 = df2.append(df3)
 #print(df4)
+
+
+
+
+
 
 
 
@@ -97,3 +107,6 @@ df_bar = df.pivot_table(index=['year'], values=['lifeExp'], aggfunc=np.mean)
 #plt.hist('lifeExp', bins=[i for i in range(100)], histtype='bar', data=df)
 #plt.show()
 
+df_pivot = df.pivot_table(index=['year'], values=['lifeExp'], aggfunc=np.mean)
+#df_pivot.plot()
+#plt.show()

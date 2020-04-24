@@ -1,0 +1,113 @@
+import pandas as pd
+from pandas import DataFrame
+import numpy as np
+import matplotlib
+from matplotlib import pyplot as plt
+from matplotlib.pyplot import figure
+
+try:
+
+    #EXAMPLE-CHART-FUNCTION
+    def chart_Example():
+        path = r"http://bit.ly/2cLzoxH"
+        df = pd.read_csv(path)
+
+        # Filter Data
+        df = df[df['year'] > 2000]
+
+        # Styles
+        plt.figure(1, figsize=(16, 8))
+        window_color = plt.figure(1)
+        window_color.patch.set_facecolor('#999999')
+        plt.style.use('seaborn-poster')
+        plt.grid(1)
+
+        # Lables
+        plt.title('Life Exp')
+        plt.xlabel('Continent')
+        plt.xlabel('Histogram')
+
+        # Create Chart                                     Types: bar', 'barstacked', 'step', 'stepfilled
+        plt.hist('lifeExp', bins=[i for i in range(100)], histtype='bar', data=df, color='#478F4B')
+
+        # Show
+        bg_color = plt.gca()
+        bg_color.set_facecolor('#999999')
+        plt.show()
+
+
+
+    # SHAPE-CLASS
+    class shapes:
+        """"My Shape Functions"""
+
+        def square():
+            try:
+                x = input("Value of X: ")
+                y = input("Value of y: ")
+                print("The area of your square is: " + str(float(x) * float(y)))
+            except Exception:
+                pass
+
+
+    # CONVERSION-CLASS
+    class conversions:
+        """"My Shape Functions"""
+
+        def ft_to_in():
+            try:
+                x = input("Value in ft: ")
+                print(str(float(x) * 12) + "ft")
+            except Exception:
+                pass
+
+
+    # HELP-LIST
+    ask_for_help = [
+        ['square', 'Volume of a Square'],
+        ['ft_to_in', 'Feet to Inches'],
+        ['chart_example', 'Chart Example']
+    ]
+
+    # CAL-LOOP
+    x = 2
+    while x > 0:
+        response = input("Call Function: ")
+        print("")
+        # MAIN
+        # EXIT
+        if response == "exit":
+            break
+
+        # HELP
+        if response == 'help':
+            print("")
+            print("The below table contains the input codes and their descriptions.")
+            print("")
+            ask_for_help = pd.DataFrame(ask_for_help, columns={'Code', 'Description'})
+            print(ask_for_help)
+            print("")
+            print("")
+
+        # CHART-EXAMPLE
+        if response == 'chart_example':
+            chart_Example()
+
+        # SHAPES
+        # SQUARE
+        if response == "square":
+            shapes.square()
+            x = 2
+
+        # CONVERSIONS
+        # SQUARE
+        if response == "ft_to_in":
+            conversions.ft_to_in()
+            x = 2
+
+        print("")
+
+except Exception:
+    pass
+
+# END

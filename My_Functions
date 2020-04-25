@@ -74,7 +74,8 @@ try:
             print("")
             print("The below table contains the input codes and their descriptions.")
             print("")
-            ask_for_help = pd.DataFrame(ask_for_help, columns={'Code', 'Description'})
+            ask_for_help = pd.DataFrame(ask_for_help)
+            ask_for_help.columns=['Code', 'Description']
             print(ask_for_help)
             print("")
             print("")

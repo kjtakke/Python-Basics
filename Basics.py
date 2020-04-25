@@ -1,20 +1,20 @@
 # Screen Resolution 1400 x 900
 # DATA TYPES
 # Set Dynamiclly
-x01 = "Hello World"                             # str
-x02 = 20                                        # int
-x03 = 20.5                                      # float
-x04 = 1j                                        # complex
-x05 = ["apple", "banana", "cherry"]             # list
-x06 = ("apple", "banana", "cherry")             # tuple
-x07 = range(6)                                  # range
-x08 = {"name": "John", "age": 36}               # dict
-x09 = {"apple", "banana", "cherry"}             # set
+x01 = "Hello World"  # str
+x02 = 20  # int
+x03 = 20.5  # float
+x04 = 1j  # complex
+x05 = ["apple", "banana", "cherry"]  # list
+x06 = ("apple", "banana", "cherry")  # tuple
+x07 = range(6)  # range
+x08 = {"name": "John", "age": 36}  # dict
+x09 = {"apple", "banana", "cherry"}  # set
 x10 = frozenset({"apple", "banana", "cherry"})  # frozenset
-x11 = True                                      # bool
-x12 = b"Hello"                                  # bytes
-x13 = bytearray(5)                              # bytearray
-x14 = memoryview(bytes(5))                      # memoryview
+x11 = True  # bool
+x12 = b"Hello"  # bytes
+x13 = bytearray(5)  # bytearray
+x14 = memoryview(bytes(5))  # memoryview
 
 # print(type(x12))
 
@@ -101,50 +101,50 @@ a10 = a07, a08
 # print("\110\145\154\154\157")
 # print("\x48\x65\x6c\x6c\x6f")
 
-#   capitalize()	    Converts the first character to upper case
-#   casefold()	        Converts string into lower case
-#   center()	        Returns a centered string
-#   count()	            Returns the number of times a specified value occurs in a string
-#   encode()	        Returns an encoded version of the string
-#   endswith()	        Returns true if the string ends with the specified value
-#   expandtabs()	    Sets the tab size of the string
-#   find()	            Searches the string for a specified value and returns the position of where it was found
-#   format()	        Formats specified values in a string
-#   format_map()	    Formats specified values in a string
-#   index()	            Searches the string for a specified value and returns the position of where it was found
-#   isalnum()	        Returns True if all characters in the string are alphanumeric
-#   isalpha()	        Returns True if all characters in the string are in the alphabet
-#   isdecimal()	        Returns True if all characters in the string are decimals
-#   isdigit()	        Returns True if all characters in the string are digits
-#   isidentifier()	    Returns True if the string is an identifier
-#   islower()	        Returns True if all characters in the string are lower case
-#   isnumeric()	        Returns True if all characters in the string are numeric
-#   isprintable()	    Returns True if all characters in the string are printable
-#   isspace()	        Returns True if all characters in the string are whitespaces
-#   istitle()	        Returns True if the string follows the rules of a title
-#   isupper()	        Returns True if all characters in the string are upper case
-#   join()	            Joins the elements of an iterable to the end of the string
-#   ljust()	            Returns a left justified version of the string
-#   lower()	            Converts a string into lower case
-#   lstrip()	        Returns a left trim version of the string
-#   maketrans()	        Returns a translation table to be used in translations
-#   partition()	        Returns a tuple where the string is parted into three parts
-#   replace()	        Returns a string where a specified value is replaced with a specified value
-#   rfind()	            Searches the string for a specified value and returns the last position of where it was found
-#   rindex()	        Searches the string for a specified value and returns the last position of where it was found
-#   rjust()	            Returns a right justified version of the string
-#   rpartition()	    Returns a tuple where the string is parted into three parts
-#   rsplit()	        Splits the string at the specified separator, and returns a list
-#   rstrip()	        Returns a right trim version of the string
-#   split()	            Splits the string at the specified separator, and returns a list
-#   splitlines()	    Splits the string at line breaks and returns a list
-#   startswith()	    Returns true if the string starts with the specified value
-#   strip()	            Returns a trimmed version of the string
-#   swapcase()	        Swaps cases, lower case becomes upper case and vice versa
-#   title()	            Converts the first character of each word to upper case
-#   translate()	        Returns a translated string
-#   upper()	            Converts a string into upper case
-#   zfill()	            Fills the string with a specified number of 0 values at the beginning
+#   capitalize()	Converts the first character to upper case
+#   casefold()	Converts string into lower case
+#   center()	Returns a centered string
+#   count()	Returns the number of times a specified value occurs in a string
+#   encode()	Returns an encoded version of the string
+#   endswith()	Returns true if the string ends with the specified value
+#   expandtabs()	Sets the tab size of the string
+#   find()	Searches the string for a specified value and returns the position of where it was found
+#   format()	Formats specified values in a string
+#   format_map()	Formats specified values in a string
+#   index()	Searches the string for a specified value and returns the position of where it was found
+#   isalnum()	Returns True if all characters in the string are alphanumeric
+#   isalpha()	Returns True if all characters in the string are in the alphabet
+#   isdecimal()	Returns True if all characters in the string are decimals
+#   isdigit()	Returns True if all characters in the string are digits
+#   isidentifier()	Returns True if the string is an identifier
+#   islower()	Returns True if all characters in the string are lower case
+#   isnumeric()	Returns True if all characters in the string are numeric
+#   isprintable()	Returns True if all characters in the string are printable
+#   isspace()	Returns True if all characters in the string are whitespaces
+#   istitle()	Returns True if the string follows the rules of a title
+#   isupper()	Returns True if all characters in the string are upper case
+#   join()	Joins the elements of an iterable to the end of the string
+#   ljust()	Returns a left justified version of the string
+#   lower()	Converts a string into lower case
+#   lstrip()	Returns a left trim version of the string
+#   maketrans()	Returns a translation table to be used in translations
+#   partition()	Returns a tuple where the string is parted into three parts
+#   replace()	Returns a string where a specified value is replaced with a specified value
+#   rfind()	Searches the string for a specified value and returns the last position of where it was found
+#   rindex()	Searches the string for a specified value and returns the last position of where it was found
+#   rjust()	Returns a right justified version of the string
+#   rpartition()	Returns a tuple where the string is parted into three parts
+#   rsplit()	Splits the string at the specified separator, and returns a list
+#   rstrip()	Returns a right trim version of the string
+#   split()	Splits the string at the specified separator, and returns a list
+#   splitlines()	Splits the string at line breaks and returns a list
+#   startswith()	Returns true if the string starts with the specified value
+#   strip()	Returns a trimmed version of the string
+#   swapcase()	Swaps cases, lower case becomes upper case and vice versa
+#   title()	Converts the first character of each word to upper case
+#   translate()	Returns a translated string
+#   upper()	Converts a string into upper case
+#   zfill()	Fills the string with a specified number of 0 values at the beginning
 
 
 # ____________________________________________________________________
@@ -212,7 +212,7 @@ a10 = a07, a08
 # but if they are actually the same object, with the same memory location:
 
 #    Operator	Description	                                                Example
-#    is 	    Returns True if both variables are the same object	        x is y
+#    is 	        Returns True if both variables are the same object	    x is y
 #    is not	    Returns True if both variables are not the same object	    x is not y
 
 
@@ -231,9 +231,9 @@ a10 = a07, a08
 #    ^	        XOR	                    Sets each bit to 1 if only one of two bits is 1
 #    ~ 	        NOT	                    Inverts all the bits
 #    <<	        Zero fill left shift	Shift left by pushing zeros in from the right and let
-#                                       the leftmost bits fall off
+# the leftmost bits fall off
 #    >>	        Signed right shift	    Shift right by pushing copies of the leftmost bit in from
-#                                       the left, and let the rightmost bits fall off
+# the left, and let the rightmost bits fall off
 
 
 # Lists_________________________________________________________________
@@ -343,17 +343,15 @@ thisdict.pop("model")
 # print(thisdict)
 
 
-
-
-
-#Dates_______________________________________________________________
+# Dates_______________________________________________________________
 import datetime
-#print(datetime.datetime.now())
+
+# print(datetime.datetime.now())
 x = datetime.datetime.now()
-#print(x)
-#print(x.strftime("%m/%d/%Y, %H:%M:%S"))
-x = datetime.datetime(2019,1,1)
-#print(x)
+# print(x)
+# print(x.strftime("%m/%d/%Y, %H:%M:%S"))
+x = datetime.datetime(2019, 1, 1)
+# print(x)
 
 
 #    Directive   Description	                                                    Example
@@ -381,10 +379,6 @@ x = datetime.datetime(2019,1,1)
 #    %x	        Local version of date	                                        12/31/18
 #    %X	        Local version of time	                                        17:41:00
 #    %%	        A % character	%
-
-
-
-
 
 
 # Logic Statments_____________________________________________________
@@ -491,7 +485,6 @@ cars = ["Ford", "Volvo", "BMW"]
 
 cars = [["Ford", "Red"], ["Volvo", "Blue"], ["BMW", "Green"]]
 
-
 # print(cars)
 # print(pd.DataFrame(cars))
 
@@ -519,6 +512,30 @@ cars = [["Ford", "Red"], ["Volvo", "Blue"], ["BMW", "Green"]]
 # my_function1()
 
 
+# Functions (lambda)_____________________________________________________________
+# A lambda function is a small anonymous function.
+# A lambda function can take any number of arguments, but can only have one expression.
+
+
+x = lambda a, b: a * b
+# print(x(3, 6))
+
+x = lambda a, b, c: (a + b) * c
+
+
+# print(x(5, 6, 2))
+
+lam1 = lambda varX: varX * 2
+# print(lam1(5))
+
+
+nm = ['greg lee Zoon', 'bob dillon', 'andrew aaron']
+#print(nm)
+nm.sort(key=lambda name: name.split(" ")[-1].lower())
+#print(nm)
+
+
+# Functions (def)
 def my_function2():
     x = "Hello from a function"
     return x
@@ -566,17 +583,62 @@ def my_function4(x, y):
 # my_function6(country ="Brazil")
 
 
-# Lambda_____________________________________________________________
-# A lambda function is a small anonymous function.
-# A lambda function can take any number of arguments, but can only have one expression.
-
-x = lambda a, b: a * b
-# print(x(3, 6))
-
-x = lambda a, b, c: (a + b) * c
 
 
-# print(x(5, 6, 2))
+
+
+
+# Recursion
+
+def fact(n):
+    if n == 1:
+        return n
+    else:
+        return n * fact(n - 1)
+#print(fact(4))
+
+
+
+
+
+
+
+def fact2(n, g, x):
+    if n == 1:
+        lst1.append(1)
+        return n
+    else:
+        lst1.append(n)
+        stat = 1
+        for z in lst1:
+            stat = z * stat
+        lst2.append(stat)
+        return n * fact2(n - 1, g, x)
+
+lst1 = []
+lst2 = []
+lst2.append(0)
+#print(fact2(12, 1, 4))
+
+lst1.reverse()
+lst1.append(1)
+import pandas as pd
+
+lst = zip(lst1, lst2)
+lst = pd.DataFrame(lst)
+lst.columns=['n','n!']
+import numpy as np
+lst.index = np.arange(1, len(lst)+1)
+#print('')
+#print(lst['n!'])
+
+
+
+
+
+
+
+
 
 
 # Class_____________________________________________________________
@@ -588,10 +650,9 @@ class myFunctions:
     def function2():
         return "This is function 2"
 
+
 # print(myFunctions.function1())
 # print(myFunctions.function2())
-
-
 
 
 class Person:
@@ -599,11 +660,12 @@ class Person:
         self.name = name
         self.age = age
 
+
 p1 = Person("John", 36)
+
+
 # print(p1.name)
 # print(p1.age)
-
-
 
 
 class Car:
@@ -615,7 +677,8 @@ class Car:
         myStr = Rego + " " + Owner
         return myStr
 
-#print(Car.car_full_name("202-107", "Kristopher"))
+
+# print(Car.car_full_name("202-107", "Kristopher"))
 
 
 class Help_text:
@@ -623,6 +686,7 @@ class Help_text:
     This is where the help text goes fo my Class
     Second Line
     """
+
     def __init__(self, car):
         self.car = car
 
@@ -633,7 +697,5 @@ class Help_text:
         """
         return "String"
 
-
-#help(Help_text)
-#help(Help_text.car2)
-
+# help(Help_text)
+# help(Help_text.car2)

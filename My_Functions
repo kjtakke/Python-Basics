@@ -8,31 +8,21 @@ from matplotlib.pyplot import figure
 try:
 
     #EXAMPLE-CHART-FUNCTION
-    def chart_Example():
-        path = r"http://bit.ly/2cLzoxH"
-        df = pd.read_csv(path)
+    def frequency_chart():
 
-        # Filter Data
-        df = df[df['year'] > 2000]
+        y1 = input('Left Tan: ')
+        x = input('Right Tan: ')
+        l1 = np.linspace(float(y1), float(x))
+        y1 = np.tan(l1)
+        plt.plot(l1, y1, color='blue')
 
-        # Styles
-        plt.figure(1, figsize=(16, 8))
-        window_color = plt.figure(1)
-        window_color.patch.set_facecolor('#999999')
-        plt.style.use('seaborn-poster')
-        plt.grid(1)
+        y2 = input('Left Cos: ')
+        x = input('Right Cos: ')
+        l2 = np.linspace(float(y2), float(x))
+        y2 = np.cos(l2)
+        plt.plot(l2, y2, color='red')
 
-        # Lables
-        plt.title('Life Exp')
-        plt.xlabel('Continent')
-        plt.xlabel('Histogram')
-
-        # Create Chart                                     Types: bar', 'barstacked', 'step', 'stepfilled
-        plt.hist('lifeExp', bins=[i for i in range(100)], histtype='bar', data=df, color='#478F4B')
-
-        # Show
-        bg_color = plt.gca()
-        bg_color.set_facecolor('#999999')
+        plt.grid()
         plt.show()
 
 
@@ -66,7 +56,7 @@ try:
     ask_for_help = [
         ['square', 'Volume of a Square'],
         ['ft_to_in', 'Feet to Inches'],
-        ['chart_example', 'Chart Example']
+        ['frequency_chart', 'Tan and Cos wave chart']
     ]
 
     # CAL-LOOP
@@ -90,8 +80,8 @@ try:
             print("")
 
         # CHART-EXAMPLE
-        if response == 'chart_example':
-            chart_Example()
+        if response == 'frequency_chart':
+            frequency_chart()
 
         # SHAPES
         # SQUARE

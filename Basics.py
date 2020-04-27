@@ -44,13 +44,36 @@ a03 = float("3")  # a03 will be 3.0
 a04 = float("4.2")  # a04 w will be 4.2
 
 # Number Types
-z01 = 5.2
-z02 = 2
-z03 = 3 + 5j
-z04 = 5j
-z05 = -5j
+z01 = 5.2       #float
+z02 = 2         #int
+z03 = 3 + 5j    #complex
 
-# print(z01 + z02 + z03 + z04 / z05)
+    #complex numbers
+    # Python code to demonstrate the working of
+    # complex(), real() and imag()
+
+    # importing "cmath" for complex number operations
+
+import cmath
+# Initializing real numbers
+x = 5
+y = 3
+
+# converting x and y into complex number
+z = complex(x, y)
+
+# printing real and imaginary part of complex number
+
+#print(z.real)
+#print(z.imag)
+#print(cmath.polar(z))               #Return the representation of x in polar coordinates. Returns a pair (r, phi) where r is the modulus of x and phi is the phase of x.
+#print(z == z.real + z.imag * 1j)    #i in math j in python -- j = square root of -1 one
+#print(z)
+
+
+
+
+# print(z01 + z02 + z03)
 
 # Strings__________________________________________________
 # print(str(a01) + "hello")
@@ -237,38 +260,38 @@ a10 = a07, a08
 
 
 # Lists_________________________________________________________________
-list = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-# print(list)
-# print(list[1])
-# print(list[-1])
-# print(list[2:5])
-# print(list[:4])
-# print(list[2:])
-# print(list[-4:-1])
+mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+# print(mylist)
+# print(mylist[1])
+# print(mylist[-1])
+# print(mylist[2:5])
+# print(mylist[:4])
+# print(mylist[2:])
+# print(mylist[-4:-1])
 
-list[1] = "blackcurrant"
-# print(list)
-
-list.append("lemon")
-# print(list)
-
-list.remove("orange")
-# print(list)
-
-list.pop(0)
-# print(list)
-
-del list[0]
-# print(list)
-
-mylist = list.copy()
+mylist[1] = "blackcurrant"
 # print(mylist)
 
-mylist = list
+mylist.append("lemon")
 # print(mylist)
 
-list.clear()
+mylist.remove("orange")
+# print(mylist)
+
+mylist.pop(0)
+# print(mylist)
+
+del mylist[0]
 # print(list)
+
+mylist1 = mylist.copy()
+# print(mylist1)
+
+mylist1 = mylist
+# print(mylist1)
+
+mylist.clear()
+# print(mylist)
 
 list1 = ["a", "b", "c"]
 list2 = [1, 2, 3]
@@ -341,6 +364,39 @@ thisdict["color"] = "red"
 
 thisdict.pop("model")
 # print(thisdict)
+
+
+
+import pandas as pd
+
+test_string = "Uh, oh, many, many, many nights go by, I sit alone at home and I cry over you. What can I do. Can't help myself, 'cause baby, it's you. Baby, it's you."
+
+test_string = test_string.lower()
+#print (test_string)
+
+res = test_string.split()
+
+#print (str(res))
+
+def word_freq(string):
+    mydict = {}
+    for word in string:
+        if word in mydict:
+            mydict[word] += 1
+        else:
+            mydict[word] = 1
+    return mydict
+
+#print(word_freq(res))
+
+
+
+
+
+
+
+
+
 
 
 # Dates_______________________________________________________________
@@ -535,6 +591,62 @@ nm.sort(key=lambda name: name.split(" ")[-1].lower())
 #print(nm)
 
 
+
+
+#map
+
+mylist = [1,2,3,4,5,6,7,8]
+mylambda = lambda x: x + 1
+mylist = map(mylambda, mylist)
+#print(mylist)
+
+mylist = list(mylist)
+#print(mylist)
+
+    #Simpler version
+mylist = list(map(lambda x: x + 1,  [1,2,3,4,5,6,7,8]))
+#print(mylist)
+
+
+
+#FILTER
+
+lst = [1,2,3,4]
+
+flst = list(filter(lambda x: x > 2, lst))
+#print(flst)
+
+
+slst = ["", "fin", "", "max", "tim"]
+slst = list(filter(None, slst))
+#print(slst)
+
+
+#REDUCE
+# Itterates over each list item
+    #step 1: val1 = f(a1, a2)
+    #step 2: val2 = f(val1, a3)
+    #step 3: val3 = f(val2, a4)
+    #...
+#return val:n
+
+import statistics
+from functools import reduce
+
+lst = [1,2,3,4,5,6,7,8,9]
+
+lst = reduce(lambda x, y: x*y, lst)
+#print(lst)
+
+
+
+
+
+
+
+
+
+
 # Functions (def)
 def my_function2():
     x = "Hello from a function"
@@ -598,11 +710,6 @@ def fact(n):
 #print(fact(4))
 
 
-
-
-
-
-
 def fact2(n, g, x):
     if n == 1:
         lst1.append(1)
@@ -635,6 +742,27 @@ lst.index = np.arange(1, len(lst)+1)
 
 
 
+
+def fib(x):
+    if x == 0 or x == 1:
+        return 1
+    else:
+        return fib(x-1) + fib(x-2)
+
+#print(fib(6))
+
+
+
+def fib_dict(n, d):
+    if n in d:
+        return d[n]
+    else:
+        ans = fib_dict(n-1, d) + fib_dict(n-2, d)
+        d[n] = ans
+        return ans
+
+d = {1:1, 2:2}
+#print(fib_dict(30,d))
 
 
 

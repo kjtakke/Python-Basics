@@ -1,0 +1,111 @@
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv(r'http://bit.ly/2cLzoxH', header=0)
+print(df.head())
+
+print(df.columns)
+
+#   'country', 'year', 'pop', 'continent', 'lifeExp', 'gdpPercap'
+# ['Asia' 'Europe' 'Africa' 'Americas' 'Oceania']
+
+print(df['continent'])
+print(df['continent'].unique())
+
+
+df1 = df[df['year'] < 2000]
+print(df1)
+
+
+
+
+
+df1 = df[((df['continent'] == 'Europe') | (df['continent'] == 'Americas')) & ((df['year'] < 2000) & (df['year'] > 1960))]
+
+df1 = df[
+    (                                           #  Wrapping the two arguments in brackets
+            (df['continent'] == 'Europe')
+            |                                       #   | is the or operator combining the two arguments
+            (df['continent'] == 'Americas')
+    )                                           #  Wrapping the two arguments in brackets
+
+    &                                           #   Combining the two sets of arguments
+
+    (                                           #   Wrapping the two arguments in brackets
+            (df['year'] < 2000)
+            &                                       #   & is the and operator combining the two arguments
+            (df['year'] > 1960)
+    )                                           #   Wrapping the two arguments in brackets
+    ]
+
+print(df1)
+
+
+
+
+
+lst1 = []
+lst2 = []
+for x in df.columns:
+    lst1.append(x)
+    lst2.append(np.count_nonzero(df[x].unique()))
+
+
+lst = pd.DataFrame(list(zip(lst1,lst2)))
+print(lst)
+
+plt.figure(figsize=(13,5))
+plt.barh(lst1,lst2)
+plt.show()
+
+plt.hist('lifeExp', bins=[i for i in range(100)], histtype="bar", data=df)
+plt.title("Life Exp")
+plt.xlabel("Age")
+plt.ylabel("Percent")
+plt.show()
+
+
+plt.hist('lifeExp', bins=[i for i in range(100)], histtype="bar", data=df[df['continent'] == 'Asia'], color="red")
+plt.title("Life Exp")
+plt.xlabel("Age")
+plt.ylabel("Percent")
+plt.show()
+
+
+plt.hist('lifeExp', bins=[i for i in range(100)], histtype="bar", data=df[df['continent'] == 'Asia'], color="red")
+plt.hist('lifeExp', bins=[i for i in range(100)], histtype="bar", data=df[df['continent'] == 'Europe'], color="blue")
+plt.hist('lifeExp', bins=[i for i in range(100)], histtype="bar", data=df[df['continent'] == 'Africa'], color="green")
+plt.hist('lifeExp', bins=[i for i in range(100)], histtype="bar", data=df[df['continent'] == 'Americas'], color="orange")
+plt.hist('lifeExp', bins=[i for i in range(100)], histtype="bar", data=df[df['continent'] == 'Oceania'], color="pink")
+plt.title("Life Exp")
+plt.xlabel("Age")
+plt.ylabel("Percent")
+plt.legend(("Asia","Europe","Africa","Americas","Oceania"))
+
+plt.show()
+
+
+
+
+dfPivot = df.pivot_table(index="continent", values="lifeExp", aggfunc=np.sum)
+print(dfPivot)
+print(pd.DataFrame(dfPivot.to_records()))
+
+
+
+dfPivot = df.pivot_table(index="year", values="lifeExp", aggfunc=np.sum, columns=('continent'))
+print(dfPivot)
+dfPivot.plot()
+plt.show()
+
+
+pd.DataFrame(dfPivot.to_records()).to_csv(r"C:\Users\krist\Desktop\lifeExp_by_year.csv")
+
+
+ax =dfPivot.plot(figsize=(13,5), title="lifeExp by continent")
+ax.set_xlabel("Year")
+ax.set_ylabel("Age")
+plt.legend(bbox_to_anchor=(1, 1), loc='upper left')
+plt.show()
+

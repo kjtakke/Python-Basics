@@ -16,7 +16,6 @@ x12 = b"Hello"  # bytes
 x13 = bytearray(5)  # bytearray
 x14 = memoryview(bytes(5))  # memoryview
 
-
 # print(type(x12))
 
 

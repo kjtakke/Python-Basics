@@ -19,7 +19,6 @@ x14 = memoryview(bytes(5))  # memoryview
 # print(type(x12))
 
 
-
 # Casting/Explicit
 y01 = str(1)
 y02 = int(1)

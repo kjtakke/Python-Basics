@@ -22,13 +22,13 @@ print(df1)
 
 
 
-df1 = df[((df['continent'] == 'Europe') | (df['continent'] == 'Americas')) & ((df['year'] < 2000) & (df['year'] > 1960))]
+df1 = df[((df['continent'] == 'Europe') | (df['continent'] == 'Oceania')) & ((df['year'] < 2000) & (df['year'] > 1960))]
 
 df1 = df[
     (                                           #  Wrapping the two arguments in brackets
             (df['continent'] == 'Europe')
             |                                       #   | is the or operator combining the two arguments
-            (df['continent'] == 'Americas')
+            (df['continent'] == 'Oceania')
     )                                           #  Wrapping the two arguments in brackets
 
     &                                           #   Combining the two sets of arguments
@@ -41,6 +41,13 @@ df1 = df[
     ]
 
 print(df1)
+
+
+plt.barh(
+    df1['country'],
+    df1['lifeExp']
+)
+plt.show()
 
 
 
@@ -130,12 +137,60 @@ dfPivot.plot()
 plt.show()
 
 
+
 pd.DataFrame(dfPivot.to_records()).to_csv(r"C:\Users\krist\Desktop\lifeExp_by_year.csv")
-
-
 ax =dfPivot.plot(figsize=(13,5), title="lifeExp by continent")
 ax.set_xlabel("Year")
 ax.set_ylabel("Age")
 plt.legend(bbox_to_anchor=(1, 1), loc='upper left')
 plt.show()
 
+
+
+
+
+
+
+dfPivot = df.pivot_table(index='continent', values='country', aggfunc=np.count_nonzero)
+dfPivot = pd.DataFrame(dfPivot.to_records())
+print(dfPivot)
+print("")
+
+
+dfYears = np.count_nonzero(df['year'].unique())
+dfPivot['country'] = dfPivot['country'].apply(lambda x: int(x / dfYears))
+
+print(dfPivot)
+
+plt.grid()
+plt.barh(
+    dfPivot['continent'],
+    dfPivot['country']
+)
+plt.xlabel("No. of Countries")
+plt.ylabel("Continent")
+plt.title("Countries to Continents")
+
+plt.show()
+
+
+
+#Proof Each Country has the sam number of years
+dfPivot = df.pivot_table(index='country', values='year', aggfunc=np.sum)
+dfPivot = pd.DataFrame(dfPivot.to_records())
+print(dfPivot)
+print("")
+
+df1 = dfPivot[dfPivot['country'] == 'Afghanistan']
+yrBase = int(df1['year'])
+
+print(yrBase)
+
+
+allSame = True
+for x in range(np.count_nonzero(dfPivot['country'])):
+    if dfPivot['year'].iloc[x] != yrBase:
+        allSame = False
+        break
+
+print(allSame)

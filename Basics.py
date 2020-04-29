@@ -1,5 +1,6 @@
 # Screen Resolution 1400 x 900
 # DATA TYPES
+#Python Formatting
 # Set Dynamiclly
 x01 = "Hello World"  # str
 x02 = 20  # int

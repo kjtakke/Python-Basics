@@ -1,4 +1,5 @@
 import numpy as np
+import statistics as st
 import pandas as pd
 from matplotlib import pyplot as plt
 
@@ -88,13 +89,42 @@ plt.show()
 
 
 
-dfPivot = df.pivot_table(index="continent", values="lifeExp", aggfunc=np.sum)
+
+# The power of Pivot Tables
+dfPivot = df.pivot_table(index="country", values="lifeExp", aggfunc=np.mean)
 print(dfPivot)
 print(pd.DataFrame(dfPivot.to_records()))
 
 
 
-dfPivot = df.pivot_table(index="year", values="lifeExp", aggfunc=np.sum, columns=('continent'))
+
+
+lst1 = []
+lst2 = []
+
+for j in df['country'].unique():
+    lstTemp = []
+    for x in range(np.size(df['year'])):
+
+        if df['country'].iloc[x] == j:
+            lstTemp.append(df['lifeExp'].iloc[x])
+    lst1.append(j)
+    lst2.append(st.mean(lstTemp))
+
+lst = pd.DataFrame(list(zip(lst1,lst2)))
+lst.columns = ["country", "lifeExp"]
+print(lst)
+
+
+
+
+dfPivot = df.pivot_table(index="continent", values="lifeExp", aggfunc=np.mean)
+print(dfPivot)
+print(pd.DataFrame(dfPivot.to_records()))
+
+
+
+dfPivot = df.pivot_table(index="year", values="lifeExp", aggfunc=np.mean, columns=('continent'))
 print(dfPivot)
 dfPivot.plot()
 plt.show()

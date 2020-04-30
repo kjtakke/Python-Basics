@@ -1,0 +1,150 @@
+from bokeh.plotting import *
+from bokeh.io import *
+from bokeh.models.tools import *
+from bokeh.palettes import *
+from bokeh.transform import *
+import numpy as np
+import pandas as pd
+
+
+#Line
+
+df = pd.read_csv(r'https://www.quandl.com/api/v3/datasets/EOD/MSFT.csv?api_key=HLPpJK9ng5A8MKxjawf1', header=0)
+df = df.iloc[::-1]
+print(df.head())
+# print(df.columns)
+# 'Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'Dividend', 'Split', 'Adj_Open', 'Adj_High', 'Adj_Low', 'Adj_Close', 'Adj_Volume'
+
+
+sDate = df['Date'].min()
+eDate = df['Date'].max()
+xLab = "Days " + str(sDate) + " - ", str(eDate)
+x = list(range(np.count_nonzero(df['Open'])))
+y = list(df['Open'])
+print(str(xLab))
+
+# x = [1,2,3,4]
+# y = [6,4,8,4]
+output_file('index.html')
+
+p = figure(
+    title="Stock Prices Over Time",
+    x_axis_label=str(xLab),
+    y_axis_label="Price",
+    plot_width=1200,
+    plot_height=800
+)
+#   legend_label="test"
+p.line(x, y, line_width=2)
+
+show(p)
+
+
+
+
+#Hbar
+
+
+df = pd.read_csv(r'http://bit.ly/2cLzoxH', header=0)
+
+print(df.head())
+# print(df.columns)
+#   'country', 'year', 'pop', 'continent', 'lifeExp', 'gdpPercap'
+# ['Asia' 'Europe' 'Africa' 'Americas' 'Oceania']
+
+
+dfPivot =df.pivot_table(index='continent', values='lifeExp', aggfunc=np.mean)
+dfPivot = pd.DataFrame(dfPivot.to_records())
+
+y = dfPivot['continent']
+x = dfPivot['lifeExp']
+print(dfPivot)
+output_file('index.html')
+
+p = figure(
+    y_range=y,
+    title="Mean Life Exp Over Time",
+    x_axis_label="Life Exp",
+    y_axis_label="Continent",
+    plot_width=1200,
+    plot_height=800,
+    tools="pan,box_select,zoom_in,zoom_out,save",   #lasso_select,click,poly_select,xwheel_pan,ywheel_pan,undo,reset,crosshair,hover
+    toolbar_location="above"                        #"above" "below" "left" "right"
+)
+p.toolbar.logo = None
+
+
+p.hbar(
+    y=y,
+    right=x,
+    left=0,
+    height=0.4,
+    color="orange",
+    fill_alpha=0.5,
+)
+
+show(p)
+
+
+
+
+#Advanced
+df = pd.read_csv(r'http://bit.ly/2cLzoxH', header=0)
+
+print(df.head())
+# print(df.columns)
+#   'country', 'year', 'pop', 'continent', 'lifeExp', 'gdpPercap'
+# ['Asia' 'Europe' 'Africa' 'Americas' 'Oceania']
+
+dfPivot =df.pivot_table(index='continent', values='lifeExp', aggfunc=np.mean)
+dfPivot = pd.DataFrame(dfPivot.to_records())
+
+
+source = ColumnDataSource(dfPivot)
+continent_list = source.data['continent'].tolist()
+output_file('index.html')
+
+p = figure(
+    y_range=continent_list,
+    title="Mean Life Exp Over Time",
+    x_axis_label="Life Exp",
+    y_axis_label="Continent",
+    plot_width=1200,
+    plot_height=800,
+    tools="pan,box_select,zoom_in,zoom_out,save",   #lasso_select,click,poly_select,xwheel_pan,ywheel_pan,undo,reset,crosshair,hover
+    toolbar_location="above",                       #"above" "below" "left" "right"
+)
+p.toolbar.logo = None
+
+
+p.hbar(
+    y='continent',
+    right='lifeExp',
+    left=0,
+    height=0.4,
+    fill_color=factor_cmap(
+        'continent',
+        palette=Accent6, #Blues8
+        factors=continent_list
+    ),
+    fill_alpha=0.9,
+    source=source,
+    legend='continent'
+)
+
+
+p.legend.orientation = 'horizontal' # vertical
+p.legend.location = 'top_center'
+p.legend.label_text_font_size = '10px'
+p.legend.click_policy = "mute"
+
+hover = HoverTool()
+
+hover.tooltips = """
+<div>
+<h3>@continent</h3>
+<div><strong>lifeExp:</strong>@lifeExp</div>
+</div>
+"""
+p.add_tools(hover)
+save(p)

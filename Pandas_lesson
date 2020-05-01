@@ -3,6 +3,15 @@ import statistics as st
 import pandas as pd
 from matplotlib import pyplot as plt
 
+from bokeh.plotting import *
+from bokeh.io import *
+from bokeh.models.tools import *
+from bokeh.palettes import *
+from bokeh.transform import *
+from bokeh import colors
+import numpy as np
+import pandas as pd
+
 df = pd.read_csv(r'http://bit.ly/2cLzoxH', header=0)
 print(df.head())
 
@@ -125,6 +134,17 @@ print(lst)
 
 
 
+
+dfPivot = df.pivot_table(index="continent", values="lifeExp", columns='year', aggfunc=np.mean)
+dfPivot = pd.DataFrame(dfPivot.to_records())
+
+dfPivot = pd.melt(dfPivot, id_vars=["continent"])
+print(dfPivot)
+
+
+
+
+
 dfPivot = df.pivot_table(index="continent", values="lifeExp", aggfunc=np.mean)
 print(dfPivot)
 print(pd.DataFrame(dfPivot.to_records()))
@@ -194,3 +214,54 @@ for x in range(np.count_nonzero(dfPivot['country'])):
         break
 
 print(allSame)
+
+
+#Bokeh
+dfPivot = df.pivot_table(index="year", values="lifeExp", aggfunc=np.mean)
+dfPivot = pd.DataFrame(dfPivot.to_records())
+print(dfPivot)
+
+
+output_file('index.html')
+
+p = figure(
+    title="Life Exp Over Time",
+    x_axis_label="Year",
+    y_axis_label="Life Exp",
+    plot_width=1200,
+    plot_height=800
+)
+#   legend_label="test"
+p.line(
+    dfPivot["year"],
+    dfPivot["lifeExp"],
+    line_width=2
+)
+
+show(p)
+
+
+
+dfPivot = df.pivot_table(index="year", values="lifeExp", aggfunc=np.mean)
+dfPivot = pd.DataFrame(dfPivot.to_records())
+print(dfPivot)
+
+
+output_file('index.html')
+
+
+p = figure(
+    plot_width=400,
+    plot_height=400
+)
+
+p.vbar(
+    x=dfPivot['year'],
+    width=1,
+    bottom=0,
+    top=dfPivot['lifeExp'],
+    color="firebrick",
+)
+
+show(p)
+

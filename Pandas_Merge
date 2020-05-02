@@ -33,4 +33,4 @@ right_on="id",
 validate='many_to_many'
 )
 
-print(df)
+print(df.sort_values("id"))

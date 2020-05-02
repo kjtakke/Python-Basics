@@ -1,0 +1,19 @@
+pip install jupyterlab
+pip install notebook
+
+pip install voila
+
+#Choose either
+  #localhost:8888
+  jupyter notebook
+  
+  #localhost:8889
+  jupyter lab
+
+#Load in both your Env and PC CMD
+pip install import_ipynb
+
+
+#At the top ot your Python File to allot you to import python modules
+import import_ipynb 
+

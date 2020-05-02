@@ -1,12 +1,10 @@
-
-
 import pandas as pd
 from pandas import DataFrame
 
 df1 = pd.DataFrame(
 	{
-		"id":[4,2,1],
-		"FName":["John","Kris","Mat"]
+		"id":[4,2,1,3],
+		"FName":["John","Kris","Mat","Ron"]
 		
 	}
 	

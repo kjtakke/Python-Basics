@@ -1,3 +1,5 @@
+
+
 import pandas as pd
 from pandas import DataFrame
 
@@ -15,8 +17,9 @@ print("")
 df2 = pd.DataFrame(
 	{
 		"id":[1,2,4],
-		"LName":["Ryan","Jone","Pip"]
-		
+		"LName":["Tax","Rogers","Ted"],
+		"MName":["Ryan","Jone","Pip"],
+		"Religion":["Crst","Crst","N/A"],
 	}
 	
 )
@@ -26,10 +29,10 @@ print("")
 df = pd.merge(
 df1,
 df2,
-how='inner',
+how='outer',
 left_on="id",
 right_on="id",
-indicator=True
+validate='many_to_many'
 )
 
 print(df)

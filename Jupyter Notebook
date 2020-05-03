@@ -23,3 +23,11 @@ python -m ipykernel install --user --name=myenv
 
 
 jupyter kernelspec list
+
+
+
+#Find and kill 
+# localhost https://stackoverflow.com/questions/39632667/how-do-i-kill-the-process-currently-using-a-port-on-localhost-in-windows
+netstat -ano | findstr :PORT_NUMBER
+
+taskkill /PID PORT_NUMBER /F

@@ -20,3 +20,6 @@ import import_ipynb
 #Jupyther Env
 pip install --user ipykernel
 python -m ipykernel install --user --name=myenv
+
+
+jupyter kernelspec list

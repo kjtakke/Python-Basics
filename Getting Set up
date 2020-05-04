@@ -1,3 +1,13 @@
+cmd
+python --version
+
+# Install Python
+https://www.python.org/downloads/
+
+#Install PIP
+https://pip.pypa.io/en/stable/installing/
+# click on 'get-pip.py
+
 pip install jupyterlab
 pip install notebook
 
@@ -23,8 +33,6 @@ python -m ipykernel install --user --name=myenv
 
 
 jupyter kernelspec list
-
-
 
 #Find and kill 
 # localhost https://stackoverflow.com/questions/39632667/how-do-i-kill-the-process-currently-using-a-port-on-localhost-in-windows

@@ -27,6 +27,11 @@ pip install import_ipynb
 #At the top ot your Python File to allot you to import python modules
 import import_ipynb 
 
+
+#Jupyter import .ipynb files
+pip install import_ipynb
+import import_ipynb
+
 #Jupyther Env
 pip install --user ipykernel
 python -m ipykernel install --user --name=myenv

@@ -1,6 +1,3 @@
-#Imprive upon the below function
-import pandas as pd
-
 def str_check(string, *args):
 	"""
 	This function counts the occurance of words in a strind.
@@ -28,7 +25,7 @@ def str_check(string, *args):
 		#Loop through wach word in string
 		for y in s_lst:
 			
-			#Convert word to lower case
+			#Convert given word to lower case
 			y = y.lower()
 			
 			#Test if the words match

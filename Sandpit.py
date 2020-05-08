@@ -48,3 +48,24 @@ print(me.name_list)
 print("")
 
 print(me.coy_email(1))
+
+
+class Statistics:
+	
+	def __init__(self, lst):
+		def Mean(lst):
+			cntS = 0
+			cntC = 0
+			for x in lst:
+				cntS += x
+				cntC += 1
+			return cntS/cntC
+		self.mean = Mean(lst)
+
+
+
+lst = [1,2,7,3,6]
+        
+myLst = Statistics(lst)
+print(myLst.mean)
+

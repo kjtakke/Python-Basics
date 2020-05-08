@@ -1,57 +1,35 @@
-def str_check(string, *args):
-	"""
-	This function counts the occurance of words in a strind.
+class myClass:
 	
-	str_check(string, word, word, ...)
-	"""
-	
-	#Create an empty list
-	lst = []
-	
-	#Convert into lower case
-	string = string.lower()
-	
-	#Place each word into a list
-	s_lst = string.split()
-	
-	
-	#Loop through each given word
-	for x in args:
+	def __init__(self, name, age=0):
+		self.name = name
+		self.age = age
+		self.name_list = name.split()
+		self.f_name = self.name_list[0]
 		
+		self.l_name = sorted(
+			self.name_list,
+			reverse=True)[0]
 	
-		#Set counter to 0
-		cnt = 0
-		
-		#Loop through wach word in string
-		for y in s_lst:
-			
-			#Convert given word to lower case
-			y = y.lower()
-			
-			#Test if the words match
-			if x == y:
-			
-				#if true + 1 to counter
-				cnt += 1
-				
-		#Append resulrs to a list
-		lst.append([x, cnt])
-		
-	#Import panndas without prefix
-	import pandas
+	def __repr__(self):
+		return "myClass('{}', '{}',{})".format(self.f_name, self.l_name, self.age)
+    
+	def __str__(self):
+		return "myClass('{}','{}')".format(self.f_name, self.l_name)
+   
 	
-	#Convert the list into a DataFrame
-	lst = pandas.DataFrame(lst)
-	
-	#Set  column names
-	lst.columns = ["word", "count"]
-	
-	#Return the list as the output
-	return lst
-	
-string = "Archaic Greece was the period in Greek history lasting from the eighth century BC to the second Persian invasion of Greece in 480 BC,[1] following the Greek Dark Ages and succeeded by the Classical period. In the archaic period, Greeks settled across the Mediterranean and the Black Seas, as far as Marseille in the west and Trapezus (Trebizond) in the east; and by the end of the archaic period, they were part of a trade network that spanned the entire Mediterranean."
+me = myClass("Kristopher Takken", 36)
 
+print(me)
+print(me.__repr__())
+print(me.__str__())
 
-		
+print("")
+print("__dict__")
+print(me.__dict__)
 
-print(str_check(string,"the","and", "of"))
+print("")
+
+print(me.f_name)
+print(me.l_name)
+print(me.age)
+print(me.name_list)

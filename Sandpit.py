@@ -15,6 +15,17 @@ class myClass:
     
 	def __str__(self):
 		return "myClass('{}','{}')".format(self.f_name, self.l_name)
+		
+		
+	def coy_email(self, pre=""):
+		if not pre == "":
+			pre = str(pre)
+		
+		fn = self.f_name.lower()
+		ln = self.l_name.lower()
+		return fn + "." + ln \
+				+ pre + "@allform.tech"
+	
    
 	
 me = myClass("Kristopher Takken", 36)
@@ -33,3 +44,7 @@ print(me.f_name)
 print(me.l_name)
 print(me.age)
 print(me.name_list)
+
+print("")
+
+print(me.coy_email(1))
